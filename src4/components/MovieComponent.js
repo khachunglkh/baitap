@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Text, View, Image, Alert, TextInput, TouchableOpacity, FlatList } from 'react-native';
-import FlatListItem from './FlatListItem';
+// import FlatListItem from './FlatListItem';
 export default class MovieComponent extends Component {
   constructor(props){
     super(props);
@@ -57,7 +57,15 @@ export default class MovieComponent extends Component {
         <FlatList
           data={this.props.movie}
           keyExtractor={(item,index) => index.toString()}
-          renderItem={({ item, index }) =><FlatListItem {...item} itemIndex={index} movieComponent={this}/>
+          renderItem={({ item, index }) =>  <Text style={{
+              padding: 10,
+              fontWeight: 'bold',
+              fontSize: 17,
+              color: 'white',
+              backgroundColor: (this.props,itenIndex % 2 === 0) ? 'dodgerblue' : 'mediumseagreen'
+            }}>
+              {`${this.props.title}, releaseYear=${this.props.email}`}
+            </Text>
           }
         />
       </View>
