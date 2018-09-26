@@ -19,6 +19,6 @@ import {name as appName} from './app.json';
 //     <MovieContainer />
 //   </Provider>
 // );
-import App from './src5/App';
+import App from './src5/app';
 // sagaMiddleware.run(rootSaga);
 AppRegistry.registerComponent(appName, () => App);
